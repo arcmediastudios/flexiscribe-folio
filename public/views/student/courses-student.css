@@ -1,0 +1,287 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+#content {
+  margin-left: 250px;
+  transition: margin-left 0.3s;
+  padding: 20px;
+  position: relative; /* For absolute positioning of the create button */
+}
+
+.page-title {
+  color: #2c3e50;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Header Layout */
+.courses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-course-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  position: absolute; /* Positioning relative to the content */
+  top: 20px;
+  right: 20px; /* Align to the top-right */
+}
+
+.create-course-btn:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Courses List Layout */
+.courses-list {
+  margin-top: 20px;
+}
+
+.course-header, .course-item {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Creates five columns with equal width */
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course-header > div, .course-item > div {
+  text-align: center;
+  display: flex;
+  justify-content: center; /* Centers the content horizontally */
+  align-items: center; /* Centers the content vertically */
+}
+
+.course-item > .course-name,
+.course-header > .header-course-name {
+  justify-content: flex-start; /* Aligns the text to the left */
+}
+
+/* Adjust the alignment of the course name specifically */
+.course-item > .course-name {
+  text-align: left; /* Align the course name to the left within its grid cell */
+  display: block; /* Makes the anchor fill the grid cell */
+  color: #3498db; /* Text color for the link, choose a suitable color */
+  text-decoration: none; /* Removes underline from links */
+  padding: 10px 0; /* Provides padding to the top and bottom */
+}
+
+.course-header > .header-course-name {
+  padding-left: 15px; /* Adjust padding to match header alignment */
+}
+
+/* Star Indicator */
+.star-container {
+  display: flex;
+  justify-content: center; /* Center the star within its container */
+  align-items: center;
+}
+
+.star {
+  fill: white; /* Start with an unfilled star */
+  transition: fill 0.3s ease;
+  width: 40px; /* Adjust the size of the star */
+  height: 40px; /* Adjust the size of the star */
+}
+
+.star.filled {
+  fill: #f1c40f; /* Filled star color */
+}
+
+/* Action Buttons */
+.action-btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.action-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+ 
+
+.edit-btn { background-color: #f39c12; }
+.publish-btn { background-color: #2ecc71; }
+.delete-btn { background-color: #e74c3c; }
+.action-btn:hover, .action-btn:focus {
+  background-color: #2980b9;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  #content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .create-course-btn {
+    position: static; /* Reset to normal flow in mobile */
+    display: block; /* Full-width block */
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .courses-list {
+    margin-left: 0;
+  }
+
+  .star-container {
+    margin-bottom: 10px;
+  }
+
+  .course-header, .course-item {
+    grid-template-columns: 1fr 3fr 1fr 1fr; /* Adjust for smaller screens */
+  }
+
+  .course-item > .course-name {
+    padding-left: 15px;
+  }
+}
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add New Course Form Styles */
+#new-course-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.form-group textarea {
+  resize: vertical; /* Allow vertical resizing */
+}
+
+#new-course-modal .student-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.student-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#new-course-modal #create-course-btn {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#new-course-modal #create-course-btn:hover {
+  background-color: #2980b9;
+}
+
+.course-name {
+  display: block; /* Makes the anchor fill the grid cell */
+  color: #3498db; /* Text color for the link, choose a suitable color */
+  text-decoration: none; /* Removes underline from links */
+  padding: 10px 0; /* Provides padding to the top and bottom */
+}
+
+.course-name:hover {
+  text-decoration: underline; /* Adds underline on hover for better UX */
+}
+.course-item > .toggle-container {
+  text-align: center;
+}
+.course-item > .course-year,
+.course-item > .course-published,
+.course-item > .course-actions {
+  text-align: center;
+}
+
+.course-header > .header-course-name,
+.course-item > .course-name {
+  text-align: left; /* Align the text to the left within its grid cell */
+  padding-left: 15px; /* Adjust padding to match header alignment */
+}
+
+.course-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

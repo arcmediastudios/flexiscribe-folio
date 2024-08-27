@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Name</title>
+    <link rel="stylesheet" href="submission-teacher.css">
+    <link rel="stylesheet" href="side-menu.css">
+    <!-- TinyMCE Script -->
+    <script src="https://cdn.tiny.cloud/1/zolo32fkfc1wq87yzgy8k4g783qj4maiztp6zniz0q2fvg2b/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+<body>
+    <div id="sidebar-container">
+        <!-- Sidebar content will go here -->
+    </div>
+   
+    <div id="content">
+        <div class="page-header">
+            <h1 class="page-title">Course Name - Assignment Name</h1>
+            <div class="student-selector">
+              <label for="student-select">Select Student:</label>
+              <select id="student-select">
+                  <option value="">--Please choose a student--</option>
+              </select>
+          </div>
+        </div>
+        <main>
+          <div class="assignment-container">
+            <p class="due-date">Due date/time: </p>
+            <!-- TinyMCE Textarea -->
+            <textarea id="assignment-editor">
+              Loading assignment...
+            </textarea>
+          </div>
+        </main>
+    </div>
+
+    <!-- Initialize TinyMCE on the textarea -->
+    <script>
+      tinymce.init({
+        selector: '#assignment-editor',
+        plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
+        toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | removeformat',
+        tinycomments_mode: 'embedded',
+        tinycomments_author: 'Author name',
+      });
+    </script>
+
+    <script src="side-menu.js"></script>
+    <script src="submission-teacher.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="profile-student.css">
+    <link rel="stylesheet" href="side-menu.css">
+</head>
+<body>
+    <div id="sidebar-container"></div>
+
+    <div id="content">
+        <h1 class="page-title">Profile</h1>
+        <main>
+            <section class="profile">
+                <form id="profileForm">
+                    <label for="profilePic">Profile Picture:</label>
+                    <input type="file" id="profilePic" name="profilePic">
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio" name="bio"></textarea>
+                    <label for="links">Links:</label>
+                    <input type="text" id="links" name="links" placeholder="http://">
+                    <button type="submit">Save Changes</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <script src="side-menu.js"></script>
+    <script src="profile-student.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignments</title>
+    <link rel="stylesheet" href="course-page-teacher.css">
+    <link rel="stylesheet" href="side-menu.css">
+</head>
+<body>
+    <div id="sidebar-container"></div>
+
+    <div id="content">
+        <h1 class="page-title" id="courseNameHeader"></h1>
+        <main>
+            <section class="assignments">
+                <div class="assignments-header">
+                    <button class="create-assignment-btn">Create Assignment +</button>
+                </div>
+                <div id="assignments-list" class="assignments-list">
+                    <!-- Assignment items will be added here by JavaScript -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Create Assignment Modal -->
+    <div id="new-assignment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create an Assignment</h2>
+            <form id="new-assignment-form" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label for="assignment-name">Assignment name:</label>
+                  <input type="text" id="assignment-name" name="assignment-name" placeholder="Enter assignment name" required>
+                </div>
+                <div class="form-group">
+                  <label for="assignment-description">Assignment description:</label>
+                  <textarea id="assignment-description" name="assignment-description" placeholder="Enter assignment description" required></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="assignment-file">Assignment File (.docx):</label>
+                  <input type="file" id="assignment-file" name="assignment-file" accept=".docx">
+                </div>
+                <div class="form-group">
+                  <label for="assignment-due-date">Due date:</label>
+                  <input type="date" id="assignment-due-date" name="assignment-due-date" required>
+                </div>
+                <div class="form-group">
+                  <label for="assignment-due-time">Due time:</label>
+                  <input type="time" id="assignment-due-time" name="assignment-due-time" required>
+                </div>
+                <button type="submit" class="btn">Create Assignment</button>
+              </form>
+              
+            </form>
+        </div>
+    </div>
+    
+    <script src="side-menu.js"></script>
+    <script src="course-page-teacher.js"></script>
+</body>
+</html>

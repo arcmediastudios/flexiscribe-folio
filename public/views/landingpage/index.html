@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FlexiScribe Folio</title>
+    <link rel="icon" type="image/jpeg" href="/images/Folio Logo/Folio Logo.png">
+    <link href="/views/landingpage/index.css" rel="stylesheet">
+</head>
+<body>
+    <div class="side-menu" id="mySideMenu">
+        <a href="/views/auth/login.html" >Login</a>
+    </div>
+    <span class="hamburger" onclick="openSideMenu()">&#9776;</span>
+    <a class="navbar-brand logo" href="#">
+        <img src="/images/Folio Logo/Folio Logo - Text White.png" alt="Folio" height="30">
+    </a>
+    <header>
+        <div id="jumbotron-video">
+            <div id="video-overlay"></div>
+            <video autoplay loop muted poster="/images/poster.jpg" id="bg-video">
+                <source src="/videos/Jumbotron.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="jumbotron-content">
+            <div class="container">
+                <h1>A Brand New Way to Educate</h1>
+                <p>The project involves developing a web application to enhance platforms like Canvas, integrating AI for student feedback, and improving usability and productivity, using Node.js, HTML, CSS, and JavaScript with libraries for functionality and security.</p>
+                <p><a class="btn btn-primary btn-lg" href="/views/auth/signup.html" role="button">Request Access</a></p>
+            </div>
+        </div>
+    </header>
+
+    <footer class="text-center" style="background-color: #0e1b4f; padding-top: 20px; padding-bottom: 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p style="margin-bottom: 10px; color: #ffffff;">&copy; 2024 FlexiScribe. All Rights Reserved.</p>
+                    <img src="/images/Folio Logo/Folio Logo - Text White.png" alt="Arc Media Studios" height="30">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/views/landingpage/index.js"></script>
+</body>
+</html>

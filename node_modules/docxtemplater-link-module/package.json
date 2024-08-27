@@ -1,0 +1,39 @@
+{
+  "name": "docxtemplater-link-module",
+  "version": "0.2.4",
+  "description": "Hyperlink module for docxtemplater",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "docxtemplater",
+    "hyperlink",
+    "microsoft word",
+    "generation",
+    "docx"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sujith3g/docxtemplater-link-module.git"
+  },
+  "author": "sujith <sujith3g(at)gmail(dot)com>",
+  "license": "MIT",
+  "dependencies": {
+    "xmldom": "0.1.22"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "docxtemplater": "^2.1.1",
+    "gulp-browserify": "^0.5.0",
+    "jszip": "^2.4.0"
+  },
+  "bugs": {
+    "url": "https://github.com/sujith3g/docxtemplater-link-module/issues"
+  },
+  "homepage": "https://github.com/sujith3g/docxtemplater-link-module#readme",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  }
+}

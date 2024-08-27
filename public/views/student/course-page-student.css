@@ -1,0 +1,389 @@
+/* courses-teacher.css */
+
+/* General Layout */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+#content {
+  margin-left: 250px;
+  transition: margin-left 0.3s;
+  padding: 20px;
+  position: relative; /* For absolute positioning of the create button */
+}
+
+.page-title {
+  color: #2c3e50;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Header Layout */
+.courses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-course-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  position: absolute; /* Positioning relative to the content */
+  top: 20px;
+  right: 20px; /* Align to the top-right */
+}
+
+.create-course-btn:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Courses List Layout */
+.courses-list {
+  margin-top: 20px;
+}
+
+.course-header, .course-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 2fr; /* Adjust the proportions as needed */
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course-header > div, .course-item > div {
+  text-align: center;
+}
+
+/* Star Indicator */
+.star-container {
+  display: flex;
+  justify-content: center; /* Center the star within its container */
+  align-items: center;
+}
+
+.star {
+  fill: white; /* Start with an unfilled star */
+  transition: fill 0.3s ease;
+  width: 40px; /* Adjust the size of the star */
+  height: 40px; /* Adjust the size of the star */
+}
+
+.star.filled {
+  fill: #f1c40f; /* Filled star color */
+}
+/* Action Buttons */
+.action-btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.action-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.edit-btn { background-color: #f39c12; } /* Orange */
+.publish-btn { background-color: #2ecc71; } /* Green */
+.delete-btn { background-color: #e74c3c; } /* Red */
+
+.action-btn:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  #content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .create-course-btn {
+    position: static; /* Reset to normal flow in mobile */
+    display: block; /* Full-width block */
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .courses-list {
+    margin-left: 0;
+  }
+
+  .star-container {
+    margin-bottom: 10px;
+  }
+
+  .course-header, .course-item {
+    grid-template-columns: 1fr 2fr 1fr 1fr; /* Adjust for smaller screens */
+  }
+}
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: 5% auto; /* 5% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%; /* Adjusted width */
+  max-width: 800px; /* Maximum width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px; /* Added rounded corners */
+  animation-name: modalopen;
+  animation-duration: 0.4s;
+}
+
+@keyframes modalopen {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+@media (max-width: 991px) {
+  .modal-content {
+    width: 90%; /* Adjusted width for smaller devices */
+    margin: 10% auto; /* Increased top margin */
+  }
+}
+
+@media (max-width: 767px) {
+  .modal-content {
+    width: 95%; /* Adjusted width for mobile devices */
+    margin: 15% auto; /* Increased top margin */
+  }
+}
+@keyframes close-modal {
+  0% {
+    opacity: 1;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    top: -100%;
+  }
+}
+.close-modal {
+  animation-name: close-modal;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards; /* This ensures the last keyframe styles remain after the animation completes */
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db; /* Blue color to match the create-assignment-btn */
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: block; /* Makes the button a block element to fit width */
+  width: 100%; /* Full width within its container */
+  box-sizing: border-box; /* Include padding and border in the button's total width and height */
+  margin-top: 10px; /* Space on top of the button */
+}
+.btn:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add New Course Form Styles */
+#new-course-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.form-group textarea {
+  resize: vertical; /* Allow vertical resizing */
+}
+
+#new-course-modal .student-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.student-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+#new-course-modal #create-course-btn {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#new-course-modal #create-course-btn:hover {
+  background-color: #2980b9;
+}
+/* course-page-teacher.css */
+
+/* Include all existing styles from the original CSS file */
+/* ... [All previous styles go here] ... */
+
+/* Additional or updated styles based on the prototype image */
+.page-title {
+  color: #2c3e50;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.assignments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-assignment-btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.create-assignment-btn:hover {
+  background-color: #2980b9;
+}
+
+.assignments-list {
+  margin-top: 20px;
+}
+
+.assignment-item {
+  display: grid;
+  grid-template-columns: 3fr 2fr; /* Adjust as necessary */
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.assignment-name {
+  text-align: left; /* Aligns text to the left */
+  margin-left: 15px; /* Provides space on the left */
+}
+
+.assignment-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.edit-btn { /* Styles for the edit button */
+  background-color: #f39c12;
+}
+
+.publish-btn { /* Styles for the publish button */
+  background-color: #2ecc71;
+}
+
+.delete-btn { /* Styles for the delete button */
+  background-color: #e74c3c;
+}
+
+.edit-btn, .publish-btn, .delete-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group input[type="file"],
+.form-group textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+  border-radius: 4px;
+  width: calc(100%); /* Calculate width, subtracting padding */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+.edit-btn:hover, .publish-btn:hover, .delete-btn:hover {
+  opacity: 0.8;
+}
+
+/* Responsive adjustments as needed */
+@media (max-width: 768px) {
+  /* ... [Responsive styles go here] ... */
+}
+
+/* Any additional styles */

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Courses</title>
+    <link rel="stylesheet" href="courses-teacher.css">
+    <link rel="stylesheet" href="side-menu.css">
+</head>
+<body>
+    <div id="sidebar-container"></div>
+
+    <div id="content">
+        <h1 class="page-title">All Courses</h1>
+        <main>
+            <section class="courses">
+                <div class="courses-header">
+                    <button class="create-course-btn">Create Course +</button>
+                </div>
+                <div class="courses-list">
+                    <div class="course-item course-header">
+                        <div class="header-course-added">Added to Side Menu</div>
+                        <div class="header-course-name">Course Name</div>
+                        <div class="header-course-year">Year Created</div>
+                        <div class="header-course-published">Published</div>
+                        <div class="header-course-actions">Actions</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <div id="new-course-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add New Course</h2>
+            <form id="new-course-form">
+                <div class="form-group">
+                    <label for="course-name">Course name:</label>
+                    <input type="text" id="course-name" name="course-name" placeholder="Enter course name">
+                </div>
+                <div class="form-group">
+                    <label for="course-description">Course description:</label>
+                    <textarea id="course-description" name="course-description" placeholder="Enter course description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Add Students:</label>
+                    <div class="student-list">
+                        <!-- Student checkboxes will be added here -->
+                    </div>
+                </div>
+                <button type="button" id="create-course-btn">Create Course</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="edit-course-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Course</h2>
+            <form id="edit-course-form">
+                <div class="form-group">
+                    <label for="edit-course-name">Course name:</label>
+                    <input type="text" id="edit-course-name" name="course-name" placeholder="Enter course name">
+                </div>
+                <div class="form-group">
+                    <label for="edit-course-description">Course description:</label>
+                    <textarea id="edit-course-description" name="course-description" placeholder="Enter course description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Edit Students:</label>
+                    <div class="student-list edit-student-list">
+                        <!-- Student checkboxes will be added here -->
+                    </div>
+                </div>
+                <button type="button" id="save-changes-btn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="side-menu.js"></script>
+    <script src="courses-teacher.js"></script>
+</body>
+</html>

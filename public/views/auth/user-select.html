@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Selection</title>
+    <!-- Updated stylesheet path to use auth-styles.css -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h1>User Selection</h1>
+        <form class="manual-login role-select-form">
+            <input type="hidden" id="userId" value="">
+            <label for="role">Select Role:</label>
+            <select name="role" id="role">
+                <option value="student">Student</option>
+                <option value="teacher">Teacher</option>
+                <option value="admin">Admin</option>
+            </select>
+            <button type="submit">Submit</button>
+            <button type="button" id="deny-user">Deny User</button>
+        </form>
+    </div>
+    <!-- Updated script path -->
+    <script src="user-select.js"></script>
+</body>
+</html>

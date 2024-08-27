@@ -1,0 +1,176 @@
+body {
+    font-family: 'Lato', sans-serif;
+    color: #000000;
+    margin: 0;
+}
+
+#jumbotron-video {
+    position: relative;
+    padding: 0;
+    overflow: hidden;
+    background: url('/videos/Jumbotron.mp4') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+#video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.jumbotron-content {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.7);
+    position: relative;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 60px; /* Adjusted to match the top spacing of the hovering divider line */
+}
+
+.jumbotron-content p {
+    margin-bottom: 30px; /* Adjusted to ensure equal spacing between the description and the button */
+}
+
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #1b1e4d;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 2;
+}
+
+.side-menu a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    color: #00aeef;
+}
+
+.hamburger {
+    font-size: 30px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 3;
+    color: #ffffff;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.hamburger.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+    transition: top 0.3s ease, left 0.3s ease;
+}
+
+.side-menu-open {
+    width: 250px;
+}
+
+.brands-section,
+.best-videos-section {
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+}
+
+.brands-section::before,
+.best-videos-section::before {
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    padding-top: 60px;
+    border-top: 1px solid #dcdcdc;
+}
+
+.brands-description,
+.best-videos-description {
+    font-size: 18px;
+    margin-bottom: 30px; /* Adjusted to match the spacing between the title and description */
+}
+
+.logo-carousel img {
+    width: 200px;
+    margin: 0 10px;
+    opacity: 1;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.video-container iframe {
+    width: calc(50% - 20px);
+    margin: 10px;
+    max-width: 560px;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    border: none;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 30px; /* Adjusted to ensure equal spacing between the description and the button */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+footer {
+    padding-top: 60px; /* Adjusted to match the top spacing of the hovering divider line */
+    text-align: center;
+    background-color: #0e1b4f;
+    color: #ffffff;
+}

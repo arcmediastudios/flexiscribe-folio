@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.page-title {
+  font-size: 32px;
+  margin: 20px 20px 10px 20px; /* Added right margin to line up with the context box */
+  display: inline-block; /* Changed from block so that margin affects the title */
+  width: calc(100% - 40px); /* Adjust width to prevent overflow */
+}
+
+main {
+  padding: 20px;
+}
+
+.profile {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px; /* Uniform margin on all sides */
+  width: calc(100% - 60px); /* Adjust the width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.profile form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile label {
+  margin-bottom: 10px;
+  font-weight: bold; /* Make labels bold */
+}
+
+.profile input[type="file"],
+.profile input[type="url"],
+.profile textarea {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: calc(100% - 22px); /* Adjust the width to account for padding and border */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.profile textarea {
+  height: 100px; /* Set a fixed height for the textarea */
+  resize: vertical; /* Allow vertical resizing only */
+}
+
+.profile button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.profile button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+@media screen and (max-width: 768px) {
+  .page-title, .profile {
+    margin: 20px 10px; /* Smaller margin for smaller screens */
+    width: calc(100% - 20px); /* Adjust the width for smaller screens */
+  }
+}
+/* profile-student.css (CSS file for profile page styling) */
+.profile-pic-placeholder {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+}

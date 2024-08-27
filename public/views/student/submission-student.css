@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+#content {
+  padding: 20px;
+  transition: margin-right 0.3s ease-in-out; /* Updated transition for margin-right */
+}
+
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+.page-title {
+  font-size: 32px;
+}
+
+main {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.assignment-container {
+  margin-bottom: 20px;
+}
+
+.due-date {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+.start-assignment-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.start-assignment-btn:hover {
+  background-color: #2980b9;
+}
+.submit-assignment-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.submit-assignment-btn:hover {
+  background-color: #2980b9;
+}
+.save-assignment-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.save-assignment-btn:hover {
+  background-color: #2980b9;
+}
+.chat-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 20px;
+}
+.chat-sidebar {
+  width: 300px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  right: -300px; /* Initially off-screen */
+  height: 100%;
+  background-color: #fff;
+  transition: right 0.3s ease-in-out; /* Smooth transition for sliding */
+  z-index: 1001; /* Above content but below button */
+}
+
+
+.chat-messages {
+  height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#chat-input {
+  width: calc(100% - 20px);
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#send-chat-btn {
+  width: 100%;
+  padding: 5px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#send-chat-btn:hover {
+  background-color: #2980b9;
+}
+
+#chat-toggle-btn {
+  position: fixed;
+  right: 0; /* Align to the right side */
+  bottom: 80px; /* Position above the bottom of the viewport */
+  background-color: #3498db; /* Button color */
+  color: white; /* Text color */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside the button */
+  cursor: pointer;
+  z-index: 1002; /* Ensure it's above the sidebar */
+}
+
+#chat-toggle-btn:hover {
+  background-color: #2980b9;
+}
+#chat-sidebar {
+  display: block; /* Changed from none to block */
+  position: fixed;
+  top: 0;
+  right: -350px; /* Sidebar width plus some extra */
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s;
+  z-index: 1001; /* Ensure it's on top of other content, but below the toggle button */
+  /* Rest of the sidebar styling */
+}
+#chat-sidebar.open {
+  right: 0;
+}
+#chat-toggle-btn, #chat-sidebar {
+  z-index: 99999; /* Use a high value to ensure it's above other elements */
+}
+.chat-container-wrapper {
+  position: relative; /* or 'position: absolute;' depending on your layout */
+  z-index: 99999; /* This value should be high as well */
+}
+.assignment-actions {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  gap: 10px; /* Spacing between buttons */
+}
+
+/* Styles for the Get Help button */
+.get-help-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #3498db;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.get-help-btn:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+#content-wrapper {
+  transition: margin-right 0.3s; /* Smooth transition for the margin change */
+}
+.chat-sidebar.open {
+  right: 0; /* Slide in */
+}
+.hidden {
+  display: none;
+}
